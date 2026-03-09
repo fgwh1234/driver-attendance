@@ -21,8 +21,9 @@ margin-top:10px;
 font-size:16px;
 }
 
-.container button{
-flex:1;
+.container{
+display:flex;
+gap:10px;
 }
 
 .checkin{background:#2e7d32;color:white;border:none;}
@@ -75,8 +76,10 @@ text-align:center;
 <input type="time" id="time">
 
 
-<button class="checkin" onclick="sendData('Check In')">Check Icn</button>
+<div class="container">
+<button class="checkin" onclick="sendData('Check In')">Check In</button>
 <button class="checkout" onclick="sendData('Check Out')">Check Out</button>
+</div>
   
 <button class="reportbtn" onclick="openReport()">Open Report</button>
 
@@ -371,6 +374,7 @@ table.innerHTML+=tr;
 
 </body>
 </html>
+
 
 
 
