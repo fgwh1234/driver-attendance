@@ -21,7 +21,12 @@ margin-top:10px;
 font-size:16px;
 }
 
-
+.container{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-top:10px;
+}
 
 .checkin{background:#2e7d32;color:white;border:none;}
 .checkout{background:#c62828;color:white;border:none;}
@@ -108,10 +113,10 @@ text-align:center;
 <option>2027</option>
 </select>
 
-
+<div class="container">  
 <button class="reportbtn" onclick="loadReport()">Generate Report</button>
 <button class="backbtn" onclick="backMain()">Back</button>
-
+</div>
   
 <table>
 
@@ -369,6 +374,7 @@ table.innerHTML+=tr;
 
 </body>
 </html>
+
 
 
 
