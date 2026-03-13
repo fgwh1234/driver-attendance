@@ -152,6 +152,50 @@ setCurrentDateTime();
 
 };
 
+// Save *************************************************************************************************
+  function saveAttendance(){
+
+let dateVal=document.getElementById("date").value;
+let lorryVal=document.getElementById("lorry").value;
+let driverVal=document.getElementById("driver").value;
+let helperVal=document.getElementById("helper").value;
+let routeVal=document.getElementById("route").value;
+let checkinVal=document.getElementById("checkin").value;
+let checkoutVal=document.getElementById("checkout").value;
+
+if(!dateVal || !lorryVal || !driverVal || !helperVal || !routeVal || !checkinVal){
+alert("Please fill all fields");
+return;
+}
+
+fetch(api,{
+method:"POST",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+body:new URLSearchParams({
+date:dateVal,
+checkin:checkinVal,
+checkout:checkoutVal,
+lorry:lorryVal,
+driver:driverVal,
+helper:helperVal,
+route:routeVal
+})
+})
+.then(res=>res.text())
+.then(msg=>{
+alert(msg);
+clearForm();
+})
+.catch(err=>{
+alert("Save error");
+console.log(err);
+});
+
+}
+
+  
 // dropdown loading*************************************************************************************************
 function loadDropdowns(){
 
@@ -377,6 +421,7 @@ table.innerHTML+=tr;
 
 </body>
 </html>
+
 
 
 
